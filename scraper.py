@@ -4,32 +4,78 @@ import requests
 class OkLigaScraper():
 
     def __init__(self):
-        #Assignar url
-        #Definir temporades
-        #Inicialitzar matriu on guardar les dades
-        pass
+        # Assignar url
+        self._url = "http://www.server2.sidgad.es/rfep/rfep_stats_1_"
 
-    def __getHTML(self, url):
+        # Definir temporades
+        self._seasons = [
+            {
+                'season' : '20/21',
+                'id' : 1474,
+            }, 
+            {
+                'season' : '19/20',
+                'id' : 1285,
+            }, 
+            {
+                'season' : '18/19',
+                'id' : 1004,
+            }, 
+            {
+                'season' : '17/18',
+                'id' : 714,
+            }, 
+            {
+                'season' : '16/17',
+                'id' : 500,
+            }
+        ]
+
+        # Inicialitzar matriu on guardar les dades
+        self._data = []
+
+    def __getHTML(self, season_id):
         #Fer request a la url per a obtenir l'HTML
-        pass
+        content = {'idc': season_id, 'tipo_stats' : 'goles', 'site_lang' : 'es'}
+        response = requests.post(self._url + str(season_id) + '.php', data = content)
+        html = response.text
+        return html
     
     def __parseHTML(self, html):
-        #A partir d'un html, omple la matriu de dades
+        # A partir d'un html, omple la matriu de dades
         pass
 
     def __parseRow(self, row):
-        #A partir d'una columna html (<tr>), 
-        #retorna una llista amb les dades del jugador
-        pass
+        # A partir d'una row html (<tr>), 
+        # retorna una llista amb les dades del jugador
+        jugador_info = []
+        tds = row.findAll('td')
+        for td in tds:
+            # Guardar variables del jugador
+            continue
+
+        return jugador_info
     
     def toCSV(self, route):
-        #Converteix la matriu de dades en un csv i 
-        #el guarda a la ruta indicada per paràmetre
+        # Converteix la matriu de dades en un csv i 
+        # el guarda a la ruta indicada per paràmetre
         pass
 
     def scrape(self):
-        #Efectua les 5 crides a getHTML per a obtenir 
-        #les 5 ultimes temporades, i per a cada una
-        #parseja la taula i l'afegeix a la matriu
-        #de dades
-        print("Scrape.")
+        # Efectua les 5 crides a getHTML per a obtenir 
+        # les 5 ultimes temporades, i per a cada una
+        # parseja la taula i l'afegeix a la matriu
+        # de dades
+
+        print("Scraping...")
+        for season in self._seasons:
+            print('Scraping Season ' + season['season'] + '...')
+            html = self.__getHTML(season['id'])
+
+            bs = BeautifulSoup(html, 'html.parser')
+            trs = bs.findAll('tr')
+
+            for tr in trs:
+                row_data = self.__parseRow(tr)
+                row_data = [season['season']] + row_data
+                self._data.append(row_data)
