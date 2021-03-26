@@ -57,7 +57,9 @@ class OkLigaScraper():
                 if (index != 2):
                     jugador_info.append(td.string)
             else:
-                if (index == 7):
+                if (index == 5):
+                    # Treure nacionalitat a partir del nom de l'imatge
+                elif (index == 7):
                     jugador_info.append(td.a['player_name'])
                 else:
                     jugador_info.append('')
