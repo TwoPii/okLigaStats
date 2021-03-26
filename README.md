@@ -26,54 +26,73 @@ La taula que mostrem a continuació està formada pels golejadors de la temporad
 
 
 ## Contingut 
-#### Explicar els camps que inclou el dataset, el període de temps de les dades i com s'ha recollit.
+#### com s'ha recollit.
 Cada registre és un jugador únic per cada temporada, és a dir, no pot haver-hi dos registres del mateix jugador a la mateixa temporada. 
 
 Com ja hem dit, el període de temps són les últimes 5 temporades. Tot i això, ens agradaria puntualitzar que només recollim aquest període de temps ja que només hi ha registres a partir de la temporada 2016/17. 
 
 El dataset té els següents camps:
 
-+ Temporada:
++ Temporada: Temporada en la qual el golejador ha fet els gols
 
-+ Rank:
++ Rank: Ranking ordenat de golejadors per temporada. Per tant, aquest índex no serà únic sino que hi haurà 5 rankings simultanis, és a dir, per exemple hi haurà 5 índexs amb valor 1 per cada pitxitxi de cada temporada.
 
-+ Equip: 
++ Equip: Les sigles del club del qual forma part el golejador.
 
-+ Escut:
++ Escut: Imatge de l'escut del club del golejador.
 
-+ Nacionalitat:
++ Nacionalitat: Bandera nacional del país del golejador corresponent.
 
-+ Jugador:
++ Jugador: Cognoms i nom del golejador corresponent, en aquest ordre.
 
-+ Gols:
++ Gols: Número de gols marcats pel jugador en aquella temporada.
 
-+ PJ:
++ PJ: Número de partits jugats pel jugador en aquella temporada
 
-+ Gpp:
++ Gpp: Gols per partit del golejador en qüestió en aquella temporada.
 
-+ Asist:
++ Asist: Número d'assistències del jugador en aquella temporada.
 
-+ App:
++ App: Assistències per partit del jugador en aquella temporada.
 
-+ Pen:
++ Pen: Proporció d'encert en penaltis del jugador en aquella temporada. Aquesta variable és una fracció de valors enters.
 
-+ Pen %:
++ Pen %: Percentatge d'encert en penaltis del jugador corresponent en aquella temporada. 
 
-+ FD:
++ FD: Proporció d'encert en faltes directes del jugador en aquella temporada. Aquesta variable és una fracció de valors enters.
 
-+ FD %:
++ FD %: Percentatge d'encert en faltes directes del jugador corresponent en aquella temporada. 
 
-+ Az:
++ Az: Número de targetes blaves del jugador en aquella temporada.
 
-+ Azpp:
++ Azpp: Número de targetes blaves per partit del golejador en aquella temporada.
 
-+ Rj:
++ Rj: Número de targetes vermelles del jugador en aquella temporada.
 
-+ Rjpp:
++ Rjpp: Número de targetes vermelles per partit del jugador en aquella temporada.
 
 
 ## Agraïments 
-+ Presentar el propietari del conjunt de dades. És necessari incloure cites d'anàlisis anteriors o, en cas de no haver-les, justificar aquesta cerca amb anàlisis similars.
+#### Presentar el propietari del conjunt de dades. És necessari incloure cites d'anàlisis anteriors o, en cas de no haver-les, justificar aquesta cerca amb anàlisis similars.
+ES REFEREIX A ANÀLISIS BY WEB SCRAPING? NOMÉS HE TROBAT LO QUE COMENTO A CONTINUACIÓ PERÒ SEGUR QUE HO HAN FET MANUALMENT I NO SE SI SERVEIX COM A RESPOSTA.
+
+Com hem comentat anteriorment, el propietari del conjunt de dades és la Real Federación Española de Patinaje. 
+
+Per una banda, hi ha hagut històricament anàlisis d'aquest lloc web per part de diaris esportius i/o clubs que formen part d'aquesta lliga, però mai sobre la taula golejadors.
+
+Únicament, hem pogut trobar aquesta entrada a la Wikipedia de la temporada 2017/18 (temporada que nosaltres també analitzem), on podem veure que hi ha una taula dels màxims golejadors. 
+
+https://en.wikipedia.org/wiki/2017%E2%80%9318_OK_Liga 
+
+
+![image](https://user-images.githubusercontent.com/81186583/112560185-e8019b00-8dd2-11eb-9406-d43dc6927349.png)
+
 
 ## Inspiració 
-+ Explicar per què és interessant aquest conjunt de dades i quines preguntes es pretenen respondre. És necessari comparar amb les anàlisis anteriors presentades a l’apartat 6..
+#### Explicar per què és interessant aquest conjunt de dades i quines preguntes es pretenen respondre. És necessari comparar amb les anàlisis anteriors presentades a l’apartat 6..
+
+Primerament, els dos som uns grans amants de l'esport i particularment un de nosaltres és un fidel aficionat de l'hoquei. 
+
+El principal motiu pel qual vam decidir fer-ho sobre les estadístiques de la Ok Liga és bàsicament perquè el lloc web de la mateixa federació és bastant senzill, arcaic i no es pot treure "suc" de les dades. Així mateix, les dades trobades en la wikipedia segueixen el mateix format. 
+
+Per tant, vam decidir crear un dataset on es pogués comparar les estadístiques dels golejadors en diferents temporades i, d'aquesta manera, no tenir que anar canviant el filtre de temporada ni de quina taula visualitzar de forma lenta i rudimentària.
