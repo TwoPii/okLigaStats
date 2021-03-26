@@ -50,10 +50,19 @@ class OkLigaScraper():
         # retorna una llista amb les dades del jugador
         jugador_info = []
         tds = row.findAll('td')
-        for td in tds:
+        print('-----------------')
+        for index, td in enumerate(tds):
             # Guardar variables del jugador
-            continue
+            if (td.string != None):
+                if (index != 2):
+                    jugador_info.append(td.string)
+            else:
+                if (index == 7):
+                    jugador_info.append(td.a['player_name'])
+                else:
+                    jugador_info.append('')
 
+        print(jugador_info)
         return jugador_info
     
     def toCSV(self, route):
@@ -79,3 +88,5 @@ class OkLigaScraper():
                 row_data = self.__parseRow(tr)
                 row_data = [season['season']] + row_data
                 self._data.append(row_data)
+        
+        print("Scraping completat")
