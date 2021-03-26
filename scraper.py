@@ -54,14 +54,21 @@ class OkLigaScraper():
         for index, td in enumerate(tds):
             # Guardar variables del jugador
             if (td.string != None):
-                if (index != 2):
+                if (index != 2 and index != 4 and index != 6):
                     jugador_info.append(td.string)
             else:
                 if (index == 5):
                     # Treure nacionalitat a partir del nom de l'imatge
-                    continue
+                    flag = td.img['src']
+                    flag = flag[-6:-4]
+                    jugador_info.append(flag)
+
                 elif (index == 7):
                     jugador_info.append(td.a['player_name'])
+                
+                elif (index == 3):
+                    # Escut
+                    continue
                 else:
                     jugador_info.append('')
 
