@@ -10,10 +10,10 @@
 + Per a sortir, executar "deactivate"
 
 ## Context 
-El conjunt de dades escollit per fer la nostra pràctica és la taula de golejadors de la OK Liga de les últimes 5 temporades. Conseqüentment, el lloc web triat és el lloc web de la Real Federación Española de Patinaje ja que la OK Liga pertany en aquesta federació. 
+El conjunt de dades escollit per fer la nostra pràctica és la taula de golejadors de l'OK Liga de les últimes 5 temporades. Conseqüentment, el lloc web triat és el lloc web de la Real Federación Española de Patinaje ja que l'OK Liga pertany en aquesta federació. 
 
 ## Definir un títol pel dataset
-Taula golejadors de la OK Liga
+Taula golejadors de l'OK Liga
 
 ## Descripció del dataset
 El dataset està format per tots els jugadors que han marcat gols en aquesta lliga durant les últimes 5 temporades, és a dir, des de la temporada 2016/17 fins la temporada actual.
@@ -26,7 +26,7 @@ La taula que mostrem a continuació està formada pels golejadors de la temporad
 
 
 ## Contingut 
-#### com s'ha recollit.
+
 Cada registre és un jugador únic per cada temporada, és a dir, no pot haver-hi dos registres del mateix jugador a la mateixa temporada. 
 
 Com ja hem dit, el període de temps són les últimes 5 temporades. Tot i això, ens agradaria puntualitzar que només recollim aquest període de temps ja que només hi ha registres a partir de la temporada 2016/17. 
@@ -74,7 +74,6 @@ El dataset té els següents camps:
 
 ## Agraïments 
 #### Presentar el propietari del conjunt de dades. És necessari incloure cites d'anàlisis anteriors o, en cas de no haver-les, justificar aquesta cerca amb anàlisis similars.
-ES REFEREIX A ANÀLISIS BY WEB SCRAPING? NOMÉS HE TROBAT LO QUE COMENTO A CONTINUACIÓ PERÒ SEGUR QUE HO HAN FET MANUALMENT I NO SE SI SERVEIX COM A RESPOSTA.
 
 Com hem comentat anteriorment, el propietari del conjunt de dades és la Real Federación Española de Patinaje. 
 
@@ -85,6 +84,8 @@ Per una banda, hi ha hagut històricament anàlisis d'aquest lloc web per part d
 https://en.wikipedia.org/wiki/2017%E2%80%9318_OK_Liga 
 
 
+Tot i això, creiem que en aquests anàlisis no s'ha utilitzat web scraping per aquesta raó hem pensat que seria interessant.
+
 ![image](https://user-images.githubusercontent.com/81186583/112560185-e8019b00-8dd2-11eb-9406-d43dc6927349.png)
 
 
@@ -93,6 +94,6 @@ https://en.wikipedia.org/wiki/2017%E2%80%9318_OK_Liga
 
 Primerament, els dos som uns grans amants de l'esport i particularment un de nosaltres és un fidel aficionat de l'hoquei. 
 
-El principal motiu pel qual vam decidir fer-ho sobre les estadístiques de la Ok Liga és bàsicament perquè el lloc web de la mateixa federació és bastant senzill, arcaic i no es pot treure "suc" de les dades. Així mateix, les dades trobades en la wikipedia segueixen el mateix format. 
+El principal motiu pel qual vam decidir fer-ho sobre les estadístiques de l'Ok Liga és bàsicament perquè el lloc web de la mateixa federació és bastant senzill, arcaic i no es pot treure "suc" de les dades. Així mateix, les dades trobades en la wikipedia segueixen el mateix format. 
 
 Per tant, vam decidir crear un dataset on es pogués comparar les estadístiques dels golejadors en diferents temporades i, d'aquesta manera, no tenir que anar canviant el filtre de temporada ni de quina taula visualitzar de forma lenta i rudimentària.
