@@ -83,11 +83,9 @@ Per una banda, hi ha hagut històricament anàlisis d'aquest lloc web per part d
 
 https://en.wikipedia.org/wiki/2017%E2%80%9318_OK_Liga 
 
-
-Tot i això, creiem que en aquests anàlisis no s'ha utilitzat web scraping per aquesta raó hem pensat que seria interessant.
-
 ![image](https://user-images.githubusercontent.com/81186583/112560185-e8019b00-8dd2-11eb-9406-d43dc6927349.png)
 
+Tot i això, creiem que en aquests anàlisis no s'ha utilitzat web scraping per aquesta raó hem pensat que seria interessant.
 
 ## Inspiració 
 #### Explicar per què és interessant aquest conjunt de dades i quines preguntes es pretenen respondre. És necessari comparar amb les anàlisis anteriors presentades a l’apartat 6..
