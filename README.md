@@ -20,9 +20,13 @@ El dataset està format per tots els jugadors que han marcat gols en aquesta lli
 
 ## Representació gràfica 
 
-La taula que mostrem a continuació està formada pels golejadors de la temporada actual. No obstant, la nostra pràctica consistirà en unir els registres de les últimes 5 temporades. 
+Primerament, us mostrem una de les taules on aplicarem web scraping, està formada pels golejadors de la temporada actual. No obstant, la nostra pràctica consistirà en unir els registres de les últimes 5 temporades. 
 
 ![image](https://user-images.githubusercontent.com/81186583/112234353-a3dc9200-8c3c-11eb-8383-d1428e1a1d56.png)
+
+Per altra banda, a partir del dataset resultant del scraping, hem creat el següent gràfic dels TOP 10 golejadors unint les últimes temporades.
+
+![image](https://user-images.githubusercontent.com/81186583/113789224-048cc400-973f-11eb-9a34-9f7207ac0bb5.png)
 
 
 ## Contingut 
