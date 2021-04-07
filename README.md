@@ -43,8 +43,6 @@ El dataset té els següents camps:
 
 + Equip: Les sigles del club del qual forma part el golejador.
 
-+ Escut: Imatge de l'escut del club del golejador.
-
 + Nacionalitat: Bandera nacional del país del golejador corresponent.
 
 + Jugador: Cognoms i nom del golejador corresponent, en aquest ordre.
@@ -75,6 +73,15 @@ El dataset té els següents camps:
 
 + Rjpp: Número de targetes vermelles per partit del jugador en aquella temporada.
 
+A més a més del dataset, també extraiem els escuts dels diferents clubs de les últimes 5 temporades i guardem aquestes imatges en la carpeta escuts.
+
+Finalment, us volem fer cinc cèntims del codi emprat per fer el web scraping, no aprofundirem gaire ja que amb el codi estructurat i els diferents comentaris utilitzats la comprensió és gairebé trivial. 
+
+Així doncs, 
+
++ main.py: Inicialitzem el programa per fer scraping, cridem la classe OkLigaScraper i finalment quan ja hem acabat guardem les dades al fitxer csv.
+
++ scraper.py: És on tenim tot el bucle principal per dur a terme el scraping ja que conté la classe OkLigaScraper i totes les funcions necessàries.
 
 ## Agraïments 
 #### Presentar el propietari del conjunt de dades. És necessari incloure cites d'anàlisis anteriors o, en cas de no haver-les, justificar aquesta cerca amb anàlisis similars.
