@@ -103,3 +103,5 @@ Per tant, vam decidir crear un dataset on es pogués comparar les estadístiques
 Així doncs, amb aquest dataset hem volgut analitzar les principals estadístiques de l'hoquei dels grans golejadors d'aquesta lliga com ara gols, assistències, targetes, etc. 
 Per poder respodre les següents preguntes: Qui ha sigut el màxim golejador les últimes 5 temporades? Quin golejador marca més gols per partit jugat? Quin jugador té millor percentatge d'encert en penalits o faltes directes? Quin jugador ha rebut més targetes blaves i vermelles cada temporada?
 
+## Zenodo
+https://zenodo.org/record/4670386#.YG3beugzYuU
