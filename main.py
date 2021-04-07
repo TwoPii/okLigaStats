@@ -10,6 +10,6 @@ print("Scraper Inicialitzat. Comença el web scraping...")
 scraper.scrape()
 
 print("Fi del web scraping. Guardant dades en fitxer csv...")
-scraper.toCSV("./dataset.csv")
+scraper.toCSV()
 
 print("Finalitzat.")

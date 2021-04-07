@@ -1,5 +1,7 @@
 from bs4 import BeautifulSoup
 import requests
+import csv
+import pandas as pd 
 
 class OkLigaScraper():
 
@@ -50,7 +52,6 @@ class OkLigaScraper():
         # retorna una llista amb les dades del jugador
         jugador_info = []
         tds = row.findAll('td')
-        print('-----------------')
         for index, td in enumerate(tds):
             # Guardar variables del jugador
             if (td.string != None):
@@ -67,18 +68,25 @@ class OkLigaScraper():
                     jugador_info.append(td.a['player_name'])
                 
                 elif (index == 3):
-                    # Escut
+                    escut = td.img['src']
+                    if escut in self._all_escuts:
+                        continue
+                    else:
+                        self._all_escuts.append(escut)
+
+                elif(index == 2 or index == 4 or index == 6):
                     continue
+
                 else:
                     jugador_info.append('')
 
-        print(jugador_info)
         return jugador_info
     
-    def toCSV(self, route):
+    def toCSV(self):
         # Converteix la matriu de dades en un csv i 
-        # el guarda a la ruta indicada per paràmetre
-        pass
+        headers = ['Temporada','Rank','Equip','Nacionalitat','Jugador', 'Gols','PJ','Gpp','Asist','App','Pen', 'Pen %','FD','FD %','Az','Azpp','Rj', 'Rjpp']
+        df = pd.DataFrame(self._data, index=None, columns=headers)
+        df.to_csv('./csv/OKliga.csv', index=False)
 
     def scrape(self):
         # Efectua les 5 crides a getHTML per a obtenir 
@@ -87,6 +95,7 @@ class OkLigaScraper():
         # de dades
 
         print("Scraping...")
+        self._all_escuts = []
         for season in self._seasons:
             print('Scraping Season ' + season['season'] + '...')
             html = self.__getHTML(season['id'])
@@ -99,4 +108,5 @@ class OkLigaScraper():
                 row_data = [season['season']] + row_data
                 self._data.append(row_data)
         
+        print(self._all_escuts)
         print("Scraping completat")
