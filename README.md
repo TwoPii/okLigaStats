@@ -101,9 +101,5 @@ El principal motiu pel qual vam decidir fer-ho sobre les estadístiques de l'Ok 
 Per tant, vam decidir crear un dataset on es pogués comparar les estadístiques dels golejadors en diferents temporades i, d'aquesta manera, no tenir que anar canviant el filtre de temporada ni de quina taula visualitzar de forma lenta i rudimentària.
 
 Així doncs, amb aquest dataset hem volgut analitzar les principals estadístiques de l'hoquei dels grans golejadors d'aquesta lliga com ara gols, assistències, targetes, etc. 
-
-Per poder respodre les següents preguntes: Qui ha sigut el màxim golejador les últimes 5 temporades? 
-Quin golejador marca més gols per partit jugat? 
-Quin jugador té millor percentatge d'encert en penalits o faltes directes? 
-Quin jugador ha rebut més targetes blaves i vermelles cada temporada?
+Per poder respodre les següents preguntes: Qui ha sigut el màxim golejador les últimes 5 temporades? Quin golejador marca més gols per partit jugat? Quin jugador té millor percentatge d'encert en penalits o faltes directes? Quin jugador ha rebut més targetes blaves i vermelles cada temporada?
 
