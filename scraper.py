@@ -35,6 +35,7 @@ class OkLigaScraper():
 
         # Inicialitzar matriu on guardar les dades
         self._data = []
+        self._all_escuts = []
 
     def __getHTML(self, season_id):
         #Fer request a la url per a obtenir l'HTML
@@ -84,9 +85,28 @@ class OkLigaScraper():
     
     def toCSV(self):
         # Converteix la matriu de dades en un csv i 
+        # la guarda en la carpeta ./csv
         headers = ['Temporada','Rank','Equip','Nacionalitat','Jugador', 'Gols','PJ','Gpp','Asist','App','Pen', 'Pen %','FD','FD %','Az','Azpp','Rj', 'Rjpp']
         df = pd.DataFrame(self._data, index=None, columns=headers)
         df.to_csv('./csv/OKliga.csv', index=False)
+
+    def __downloadEscuts(self):
+        # Per a cada escut(url), descarregar imatge i
+        # guardar en carpeta ./escuts
+        for escut in self._all_escuts:
+            r = requests.get(escut, stream = True)
+
+            if r.status_code == 200:
+                aSplit = escut.split('/')
+                ruta = "./escuts/" + aSplit[len(aSplit)-1]
+                output = open(ruta,"wb")
+
+                for chunk in r:
+                    output.write(chunk)
+
+                output.close()
+
+
 
     def scrape(self):
         # Efectua les 5 crides a getHTML per a obtenir 
@@ -95,7 +115,6 @@ class OkLigaScraper():
         # de dades
 
         print("Scraping...")
-        self._all_escuts = []
         for season in self._seasons:
             print('Scraping Season ' + season['season'] + '...')
             html = self.__getHTML(season['id'])
@@ -108,5 +127,6 @@ class OkLigaScraper():
                 row_data = [season['season']] + row_data
                 self._data.append(row_data)
         
-        print(self._all_escuts)
+        print("Descarregant escuts...")
+        self.__downloadEscuts()
         print("Scraping completat")
